@@ -10,7 +10,7 @@ class Solution:
         for num in arr:
             Sum += num
             if Sum > Maxx:
-                Maxx = max(Maxx,Sum)
+                Maxx = Sum
             if Sum <= 0:
                 Sum = 0
         return Maxx
