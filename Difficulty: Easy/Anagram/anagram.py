@@ -10,10 +10,7 @@ class Solution:
             return False
         s1 = sorted(a)
         s2 = sorted(b)
-        for i in range(len(a)):
-            if s1[i]!=s2[i]:
-                return False
-        return True
+        return s1==s2
 
 
 #{ 
