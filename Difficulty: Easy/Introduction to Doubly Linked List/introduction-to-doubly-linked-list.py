@@ -13,29 +13,25 @@
 	        self.next = None
 	        self.prev = None
 '''
+
 class Solution:
     def constructDLL(self, arr):
-        n = len(arr)
-        if n == 0:
-            return None
+        head = None
+        current = None
+    
+        # Iterate through the array
+        for value in arr:
+            new_node = Node(value)  # Create a new node for each element
+            
+            if head is None:        # If it's the first node, make it the head
+                head = new_node
+                current = head
+            else:
+                current.next = new_node  # Link current node to the new node
+                new_node.prev = current  # Link the new node back to the current node
+                current = new_node       # Move to the new node
         
-        head = Node(arr[0])
-        current = head
-        if n==1:
-            return head
-        
-        for i in range(1,n):
-            new_node = Node(arr[i])
-            current.next = new_node
-            new_node.prev = current
-            current = new_node
-        return head
-        
-        
-        
-        
-        
-        
+        return head  # Return the head of the doubly linked list
 
 #{ 
  # Driver Code Starts.
