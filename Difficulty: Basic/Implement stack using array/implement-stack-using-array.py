@@ -1,43 +1,22 @@
 #User function Template for python3
 
+#Back-end complete function Template for Python 3
 class MyStack:
-    
+
     def __init__(self):
-        # Initialize an empty array to represent the stack
         self.arr = []
 
-    # Function to push an integer into the stack.
+    #Function to push an integer into the stack.
     def push(self, data):
-        # Add the element 'data' to the top of the stack
         self.arr.append(data)
 
-    # Function to remove an item from top of the stack.
+    #Function to remove an item from top of the stack.
     def pop(self):
-        # Check if the stack is empty
+
+        #if stack is empty, we return -1 else we return the top element.
         if len(self.arr) == 0:
             return -1
-        else:
-            # Remove and return the top element
-            return self.arr.pop()
-
-
-# Function to handle the input and process queries
-    def process_queries(queries):
-        stack = MyStack()  # Create an instance of MyStack
-        results = []       # To store the output of pop() operations
-    
-        for query in queries:
-            if query[0] == 1:
-                # Push operation: query[1] contains the element to push
-                stack.push(query[1])
-            elif query[0] == 2:
-                # Pop operation: append the result to the results list
-                results.append(stack.pop())
-    
-        # Print all the results for pop operations
-        print(", ".join(map(str, results)))
-        
-
+        return self.arr.pop()
 
 #{ 
  # Driver Code Starts
