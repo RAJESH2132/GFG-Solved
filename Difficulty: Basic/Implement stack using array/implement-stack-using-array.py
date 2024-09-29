@@ -15,6 +15,7 @@ class MyStack:
         #if stack is empty, we return -1 else we return the top element.
         if len(self.arr) == 0:
             return -1
+            
         return self.arr.pop()
 
 #{ 
