@@ -1,8 +1,8 @@
 #User function Template for python3
 
 class Solution:
-	def AllPrimeFactors(self, n):
-	    prime_factors = []
+    def AllPrimeFactors(self, n):
+        prime_factors = []
 
         # Check for number of 2s
         if n % 2 == 0:
@@ -22,6 +22,9 @@ class Solution:
             prime_factors.append(n)
         
         return prime_factors
+
+
+
 
 #{ 
  # Driver Code Starts
