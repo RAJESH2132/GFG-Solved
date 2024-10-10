@@ -3,25 +3,27 @@
 #Initial Template for Python 3
 
 # } Driver Code Ends
-#User function Template for python3
-
+#Back-end complete function Template for Python 3
 '''
 # Node Class
-	class Node:
-	    def __init__(self, data):   # data -> value stored in node
-	        self.data = data
-	        self.next = None
+    class Node:
+        def __init__(self, data):   # data -> value stored in node
+            self.data = data
+            self.next = None
 '''
+
+
 class Solution:
+
     def constructLL(self, arr):
-        if len(arr) == 0:
-            return None
         head = Node(arr[0])
-        current = head
-        for i in range(1,len(arr)):
-            current.next = Node(arr[i])
-            current = current.next
-        return head
+        origHead = head
+        for val in arr[1:]:
+            head.next = Node(val)
+            head = head.next
+        return origHead
+
+
 
 #{ 
  # Driver Code Starts.
