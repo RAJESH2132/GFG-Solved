@@ -3,22 +3,14 @@
 
 class Solution:
     def evenlyDivides (self, n):
-        # code here
         count = 0
-        original_n = n  # Store the original number
+        original = n
         while n > 0:
-            digit = n % 10  # Extract the last digit
-        # Check if the digit divides the original number evenly and is not zero
-            if digit != 0 and original_n % digit == 0:
+            digit = n % 10
+            if digit != 0 and original % digit == 0:
                 count += 1
-            n //= 10  # Remove the last digit
+            n = n //10
         return count
-
-
-
-
-
-
 
 
 #{ 
