@@ -1,18 +1,11 @@
 #User function Template for python3
 
 class Solution:
-    def printGfg(self, N):
-    
-        # Base case: If N is less than or equal to 0, return (do nothing)
-        if N <= 0:
+    def printGfg(self, n):
+        if n<1:
             return
-        # Print "GFG" followed by a space
-        print("GFG", end=' ')
-        # Recursive call with N-1
-        self.printGfg(N - 1)
-
-
-
+        print("GFG", end=" ")
+        self.printGfg(n-1)
 
 
 #{ 
