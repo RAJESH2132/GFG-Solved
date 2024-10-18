@@ -2,29 +2,22 @@
 
 class Solution:
     def factorialNumbers(self, n):
-    
-        # Initialize an empty list to store the factorial numbers
-        factorials = []
-        
-        def helper(i, current_factorial):
-            # Base case: if current factorial exceeds n, stop recursion
-            if current_factorial > n:
+        # Helper recursive function to generate factorial numbers <= n
+        def factorial_helper(i, fact, n, result):
+            # Base case: if factorial exceeds n, stop recursion
+            if fact > n:
                 return
             
-            # Append the current factorial to the list
-            factorials.append(current_factorial)
+            # Append the current factorial to the result list
+            result.append(fact)
             
-            # Recursively calculate the next factorial
-            helper(i + 1, current_factorial * (i + 1))
-        
-        # Start the recursion with i=1 and current factorial as 1 (1! = 1)
-        helper(1, 1)
-        
-        # Return the list of factorial numbers less than or equal to n
-        return factorials
+            # Recursive case: calculate the next factorial (i+1)! and continue
+            factorial_helper(i + 1, fact * (i + 1), n, result)
 
-
-
+        # Initialize the result list and start recursion from 1! = 1
+        result = []
+        factorial_helper(1, 1, n, result)
+        return result
     	
 
 
