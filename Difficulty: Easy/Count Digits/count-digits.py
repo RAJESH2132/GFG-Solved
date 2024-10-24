@@ -13,6 +13,9 @@ class Solution:
         return count
 
 
+
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
@@ -25,4 +28,5 @@ if __name__ == '__main__':
 
         ob = Solution()
         print(ob.evenlyDivides(N))
+        print("~")
 # } Driver Code Ends
