@@ -18,6 +18,9 @@ class Solution:
         
 
 
+
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
@@ -37,7 +40,7 @@ def main():
 
         obj = Solution()
         print(obj.findFloor(A, N, X))
-
+        print("~")
         T -= 1
 
 
