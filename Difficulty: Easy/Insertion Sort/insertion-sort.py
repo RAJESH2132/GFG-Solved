@@ -5,7 +5,7 @@ class Solution:
         #code here
         
     #Function to sort the list using insertion sort algorithm.    
-    def insertionSort(self, alist, n):
+    def insertionSort(self, arr, n):
         #code here
         for i in range(1,n):
             key = arr[i]
@@ -13,9 +13,11 @@ class Solution:
             
             while j>=0 and key < arr[j]:
                 arr[j+1] = arr[j]
-                j = j-1
+                j -= 1
             arr[j+1] = key
-        return arr
+
+
+
 
 
 #{ 
@@ -32,5 +34,6 @@ if __name__ == "__main__":
             print(arr[i], end=" ")
 
         print()
+        print("~")
 
 # } Driver Code Ends
