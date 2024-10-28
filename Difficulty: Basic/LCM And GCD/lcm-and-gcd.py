@@ -18,6 +18,9 @@ class Solution:
     
         return [lcm_ab, gcd_ab]
 
+
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
@@ -32,4 +35,5 @@ if __name__ == '__main__':
         ptr = ob.lcmAndGcd(A,B)
         
         print(ptr[0],ptr[1])
+        print("~")
 # } Driver Code Ends
