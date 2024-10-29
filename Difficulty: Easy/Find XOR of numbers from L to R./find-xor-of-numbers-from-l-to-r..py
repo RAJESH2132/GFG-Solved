@@ -12,9 +12,10 @@ class Solution:
         else:
             return 0
     
+    # def findXOR(self, l: int, r: int) -> int:
+        # XOR of range [l, r] is XOR(1, r) ^ XOR(1, l-1)
     
     def findXOR(self, l, r):
-        # XOR of range [l, r] is XOR(1, r) ^ XOR(1, l-1)
         return self.xor_upto(r) ^ self.xor_upto(l - 1)
         # Code here
 
@@ -33,4 +34,5 @@ if __name__ == '__main__':
         ob = Solution()
         res = ob.findXOR(l, r)
         print(res)
+        print("~")
 # } Driver Code Ends
