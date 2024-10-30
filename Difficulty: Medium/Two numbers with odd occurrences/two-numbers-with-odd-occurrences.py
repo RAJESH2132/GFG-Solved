@@ -44,4 +44,5 @@ if __name__ == '__main__':
         for i in range(len(ans)):
         	print(ans[i], end = " ")
         print()
+        print("~")
 # } Driver Code Ends
