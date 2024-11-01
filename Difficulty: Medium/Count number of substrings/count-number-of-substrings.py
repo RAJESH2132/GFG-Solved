@@ -41,4 +41,5 @@ for tc in range (t):
     k = int (input ())
     ob = Solution()
     print (ob.substrCount (s, k))
+    print("~")
 # } Driver Code Ends
