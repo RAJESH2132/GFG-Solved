@@ -70,7 +70,7 @@ if __name__ == "__main__":
         ob = Solution()
         ans = ob.insertAtEnd(head, x)
         printList(ans)
-
+        print("~")
         t -= 1
 
 # } Driver Code Ends
