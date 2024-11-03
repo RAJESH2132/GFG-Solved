@@ -22,6 +22,7 @@ class Solution:
 
 
 
+
 #{ 
  # Driver Code Starts.
 if __name__ == '__main__': 
@@ -30,4 +31,5 @@ if __name__ == '__main__':
         n, i = list(map(int, input().split()))
         ob = Solution()
         ob.bitManipulation(n, i)
+        print("~")
 # } Driver Code Ends
