@@ -31,4 +31,5 @@ if __name__ == '__main__':
         for i in range(n):
             print(arr[i],end=" ")
         print()
+        print("~")
 # } Driver Code Ends
