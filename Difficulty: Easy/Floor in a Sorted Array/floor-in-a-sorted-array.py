@@ -2,7 +2,8 @@ class Solution:
     #User function Template for python3
     
     #Complete this function
-    def findFloor(self,arr,n,x):
+    def findFloor(self,arr,x):
+        n = len(arr)
         low, high = 0, len(arr) - 1
         result = -1
     
@@ -25,26 +26,14 @@ class Solution:
  # Driver Code Starts
 #Initial Template for Python 3
 
-import math
-
-
-def main():
-    T = int(input())
-    while (T > 0):
-
-        NX = [int(x) for x in input().strip().split()]
-        N = NX[0]
-        X = NX[1]
-
-        A = [int(x) for x in input().strip().split()]
-
-        obj = Solution()
-        print(obj.findFloor(A, N, X))
-        print("~")
-        T -= 1
-
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    tc = int(input())
+    while tc > 0:
+        arr = list(map(int, input().strip().split()))
+        k = int(input().strip())
+        ob = Solution()
+        ans = ob.findFloor(arr, k)
+        print(ans)
+        tc -= 1
 
 # } Driver Code Ends
