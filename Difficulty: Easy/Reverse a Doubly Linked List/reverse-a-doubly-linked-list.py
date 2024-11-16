@@ -13,17 +13,36 @@ class Solution:
         #return head of reverse doubly linked list
         if head is None or head.next is None:
             return head
-            
-        temp = None
-        current = head
+        
+        back = None  
+    
+    # Initialize a pointer
+    # to the current node
+        current = head  
+    
+        # Traverse the linked list
         while current is not None:
-            temp = current.prev
+            
+            # Store a reference to
+            # the previous node
+            back = current.prev 
+    
+            # Swap the previous and next pointers
             current.prev = current.next
-            current.next = temp
-            current = current.prev
             
-        return temp.prev
+             # This step reverses the links
+            current.next = back
             
+            # Move to the next node
+            # in the original list
+            current = current.prev  
+    
+        # The final node in the original list
+        # becomes the new head after reversal
+        return back.prev 
+
+
+
 
 
 
