@@ -1,21 +1,16 @@
 #User function Template for python3
 
 class Solution: 
-    # def select(self, arr, i):
-    #     # code here 
-    
+
     def selectionSort(self, arr,n):
-        #code here
         for i in range(n-1):
-            minn = i
+            mini = i
             for j in range(i+1,n):
-                if arr[minn] > arr[j]:
-                    minn = j
-            arr[i], arr[minn] = arr[minn], arr[i]
+                if (arr[j]<arr[mini]):
+                    mini = j
+            arr[i] , arr[mini] = arr[mini] , arr[i]
         return arr
-
-
-
+        
 
 
 #{ 
