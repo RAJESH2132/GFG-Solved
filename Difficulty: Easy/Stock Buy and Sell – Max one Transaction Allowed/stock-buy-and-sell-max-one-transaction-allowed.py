@@ -1,14 +1,14 @@
 class Solution:
     def maximumProfit(self, prices):
         n = len(prices)
-        minPrice = prices[0]
         profit = 0
+        minPrice = prices[0]
         for i in range(1,n):
             minPrice = min(minPrice,prices[i])
             profit = max(profit,prices[i]-minPrice)
-        if profit < 0:
-            return 0
         return profit
+            
+        
 
 #{ 
  # Driver Code Starts
