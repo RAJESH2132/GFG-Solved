@@ -7,47 +7,67 @@
 
 
 class Solution:
-    
-    def merge(self, arr, low, mid, high):
-        # Temporary array
-        temp = []
-        left = low       # Starting index of left half of arr
-        right = mid + 1  # Starting index of right half of arr
+
+    def merge(self, array, start, middle, end):
+        """
+        Merges two sorted subarrays of 'array' into a single sorted subarray.
+        Subarray 1: array[start:middle+1]
+        Subarray 2: array[middle+1:end+1]
+        """
+
+        # Temporary array to store merged elements
+        merged = []
         
-        # Merging two halves in a sorted manner
-        while left <= mid and right <= high:
-            if arr[left] <= arr[right]:
-                temp.append(arr[left])
-                left += 1
+        # Indices for left and right subarrays
+        left_index = start     # Starting index of the left subarray
+        right_index = middle + 1  # Starting index of the right subarray
+
+        # Compare elements from both subarrays and merge them in sorted order
+        while left_index <= middle and right_index <= end:
+            if array[left_index] <= array[right_index]:
+                merged.append(array[left_index])
+                left_index += 1
             else:
-                temp.append(arr[right])
-                right += 1
-        
-        # Adding remaining elements from the left half
-        while left <= mid:
-            temp.append(arr[left])
-            left += 1
-        
-        # Adding remaining elements from the right half
-        while right <= high:
-            temp.append(arr[right])
-            right += 1
-        
-        # Copy sorted elements back to the original array
-        for i in range(low, high + 1):
-            arr[i] = temp[i - low]
-        
-    def mergeSort(self, arr, left, right):
-        # Safeguards against invalid inputs
-        if len(arr) == 0 or left < 0 or right >= len(arr) or left >= right:
+                merged.append(array[right_index])
+                right_index += 1
+
+        # Append remaining elements from the left subarray (if any)
+        while left_index <= middle:
+            merged.append(array[left_index])
+            left_index += 1
+
+        # Append remaining elements from the right subarray (if any)
+        while right_index <= end:
+            merged.append(array[right_index])
+            right_index += 1
+
+        # Copy the merged elements back into the original array
+        for i in range(start, end + 1):
+            array[i] = merged[i - start]
+
+    def mergeSort(self, array, start, end):
+        """
+        Recursively divides the array into smaller subarrays and sorts them.
+        Then merges the sorted subarrays to form the final sorted array.
+        """
+
+        # Base condition: If the subarray has one or no elements, it's already sorted
+        if start >= end:
             return
-        
-        mid = (left + right) // 2
-        # Recursively sort the left and right halves
-        self.mergeSort(arr, left, mid)  # Left half
-        self.mergeSort(arr, mid + 1, right)  # Right half
+
+        # Calculate the middle index of the current subarray
+        middle = (start + end) // 2
+
+        # Recursively sort the left half
+        self.mergeSort(array, start, middle)
+
+        # Recursively sort the right half
+        self.mergeSort(array, middle + 1, end)
+
         # Merge the sorted halves
-        self.merge(arr, left, mid, right)
+        self.merge(array, start, middle, end)
+
+
 
 
 
