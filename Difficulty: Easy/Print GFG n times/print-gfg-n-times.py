@@ -2,7 +2,7 @@
 
 class Solution:
     def printGfg(self, n):
-        if n<1:
+        if n < 1:
             return
         print("GFG", end=" ")
         self.printGfg(n-1)
@@ -19,4 +19,5 @@ if __name__ == '__main__':
         ob = Solution()
         ob.printGfg(N)
         print()
+        print("~")
 # } Driver Code Ends
