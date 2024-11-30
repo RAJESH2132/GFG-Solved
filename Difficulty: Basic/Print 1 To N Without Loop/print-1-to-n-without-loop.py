@@ -2,18 +2,11 @@
 
 class Solution:    
     #Complete this function
-    def printNos(self,N):
-        #Your code here
-        if N<1:
+    def printNos(self,n):
+        if n<1:
             return
-        self.printNos(N-1)
-        print(N,end=" ")
-
-
-
-
-
-
+        self.printNos(n-1)
+        print(n,end=" ")
 
 
 #{ 
@@ -23,23 +16,24 @@ class Solution:
 import math
 
 
-
-
 def main():
-    
-    T=int(input())
-    
-    while(T>0):
-        
-        
-        N=int(input())
-        
-        ob=Solution()
-        
+
+    T = int(input())
+
+    while (T > 0):
+
+        N = int(input())
+
+        ob = Solution()
+
         ob.printNos(N)
         print()
-        T-=1
+        T -= 1
 
-if __name__=="__main__":
+        print("~")
+
+
+if __name__ == "__main__":
     main()
+
 # } Driver Code Ends
