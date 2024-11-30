@@ -4,7 +4,7 @@ class Solution:
     def printNos(self, n):
         if n < 1:
             return 
-        print(n,end=" ")
+        print(n, end=" ")
         self.printNos(n-1)
 
 
@@ -19,4 +19,5 @@ if __name__ == '__main__':
         ob = Solution()
         ob.printNos(N)
         print()
+        print("~")
 # } Driver Code Ends
