@@ -2,23 +2,17 @@
 
 class Solution:
     def factorialNumbers(self, n):
-        # Helper recursive function to generate factorial numbers <= n
-        def factorial_helper(i, fact, n, result):
-            # Base case: if factorial exceeds n, stop recursion
+        def factorial(current, fact, result):
             if fact > n:
                 return
-            
-            # Append the current factorial to the result list
             result.append(fact)
-            
-            # Recursive case: calculate the next factorial (i+1)! and continue
-            factorial_helper(i + 1, fact * (i + 1), n, result)
-
-        # Initialize the result list and start recursion from 1! = 1
+            factorial(current+1, fact*(current+1), result)
+        
         result = []
-        factorial_helper(1, 1, n, result)
+        factorial(1, 1, result)
         return result
-    	
+
+ 
 
 
 #{ 
@@ -34,5 +28,6 @@ if __name__ == '__main__':
         for i in ans:
             print(i, end=" ")
         print()
+        print("~")
 
 # } Driver Code Ends
