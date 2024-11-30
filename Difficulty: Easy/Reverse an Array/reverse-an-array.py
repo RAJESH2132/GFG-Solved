@@ -1,15 +1,16 @@
 class Solution:
     def reverseArray(self, arr):
-        start = 0
-        end = len(arr)-1
-        def reverseFunction(arr,start,end):
-            
+        def reverse_helper(arr, start, end):
+            # Base case: If pointers meet or cross, stop recursion
             if start >= end:
                 return
+            # Swap elements at start and end
             arr[start], arr[end] = arr[end], arr[start]
-            
-            reverseFunction(arr,start+1,end-1)
-        reverseFunction(arr,start,end)
+            # Recurse for the remaining array
+            reverse_helper(arr, start + 1, end - 1)
+
+        # Call the helper function with full array
+        reverse_helper(arr, 0, len(arr) - 1)
         return arr
         
         
@@ -42,6 +43,7 @@ def main():
         for i in range(0, len(arr)):
             print(arr[i], end=" ")
         print()
+        print("~")
 
         # Decrement the test case count
         tc -= 1
