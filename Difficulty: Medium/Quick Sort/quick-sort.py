@@ -1,7 +1,5 @@
-#User function Template for python3
-
 class Solution:
-    #Function to sort a list using quick sort algorithm.
+    
     def quickSort(self,arr,low,high):
         if low < high:
             partitionIndex = self.partition(arr,low,high)
