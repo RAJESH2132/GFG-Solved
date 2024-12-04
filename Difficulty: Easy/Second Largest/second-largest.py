@@ -1,16 +1,16 @@
+#User function Template for python3
 class Solution:
     def getSecondLargest(self, arr):
-        largest = -1
+        largest = arr[0]
         second_largest = -1
-        
-        for e in arr:
-            if e > largest:  
+        for ele in arr:
+            if ele > largest:
                 second_largest = largest
-                largest = e
-            elif largest > e > second_largest:
-                second_largest = e
-        
+                largest = ele
+            if ele < largest and ele > second_largest:
+                second_largest = ele
         return second_largest
+
 #{ 
  # Driver Code Starts
 # Initial Template for Python 3
