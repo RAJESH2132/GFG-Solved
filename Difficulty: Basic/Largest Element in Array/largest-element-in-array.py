@@ -4,17 +4,12 @@ from typing import List
 
 class Solution:
     def largest(self, arr : List[int]) -> int:
-        n = len(arr)
-        # code here
-        max = arr[0]
-        for i in range(n):
-            if arr[i]>max:
-                max=arr[i]
-        return max
+        largest = arr[0]
+        for ele in arr:
+            if ele > largest:
+                largest = ele
+        return largest
         
-
-
-
 
 
 
