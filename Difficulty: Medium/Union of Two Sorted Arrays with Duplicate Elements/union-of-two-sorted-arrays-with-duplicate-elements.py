@@ -1,42 +1,33 @@
-#User function Template for python3
-
 class Solution:
     
-    #Function to return a list containing the union of the two arrays.
-    def findUnion(self,arr1,arr2):
-        '''
-        :param a: given sorted array a
-        :param n: size of sorted array a
-        :param b: given sorted array b
-        :param m: size of sorted array b
-        :return:  The union of both arrays as a list
-        '''
-        # code here 
-        n = len(arr1)
-        m = len(arr2)
-        i,j = 0,0
+    # Function to return a list containing the union of the two arrays.
+    def findUnion(self, a, b):
+        i, j = 0, 0
         union = []
-        while i<n and j<m:
-            if arr1[i]<=arr2[j]:
-                if len(union)==0 or union[-1]!=arr1[i]:
-                    union.append(arr1[i])
-                i+=1
+        
+        while i < len(a) and j < len(b):
+            if a[i] <= b[j]:
+                if len(union) == 0 or union[-1] != a[i]:
+                    union.append(a[i])
+                i += 1
             else:
-                if len(union)==0 or union[-1]!=arr2[j]:
-                    union.append(arr2[j])
-                j+=1
-        while i<n:
-            if len(union)==0 or union[-1]!=arr1[i]:
-                union.append(arr1[i])
-            i+=1
-        while j<m:
-            if len(union)==0 or union[-1]!=arr2[j]:
-                union.append(arr2[j])
-            j+=1
-        return union
-
-
-
+                if len(union) == 0 or union[-1] != b[j]:
+                    union.append(b[j])
+                j += 1
+        
+        # Append remaining elements from array 'a'
+        while i < len(a):
+            if union[-1] != a[i]:
+                union.append(a[i])
+            i += 1
+        
+        # Append remaining elements from array 'b'
+        while j < len(b):
+            if union[-1] != b[j]:
+                union.append(b[j])
+            j += 1
+        
+        return union  # Return outside the while loop
 
 
 #{ 
