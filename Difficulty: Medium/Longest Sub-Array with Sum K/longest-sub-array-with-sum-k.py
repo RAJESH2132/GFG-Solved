@@ -1,41 +1,44 @@
-#User function Template for python3
-
 class Solution:
-    def lenOfLongSubarr (self, arr, n, k) : 
-        #Complete the function
-        preSum = {}
-        maxLen = 0
-        sum = 0
+    def lenOfLongestSubarr(self, a, k):  
+        n = len(a)  # Size of the array
+
+        preSumMap = {}  # Hash map to store prefix sums
+        Sum = 0  # Running prefix sum
+        maxLen = 0  # Maximum length of subarray with sum `k`
+
         for i in range(n):
-            sum += arr[i]
-            if sum == k:
-                maxLen = max(maxLen,i+1)
-            rem = sum-k
-            if rem in preSum:
-                length = i - preSum[rem]
-                maxLen = max(maxLen,length)
-            if sum not in preSum:
-                preSum[sum] = i
+        # Calculate the prefix sum till index `i`
+            Sum += a[i]
+
+        # If the prefix sum equals `k`, update the maximum length
+            if Sum == k:
+                maxLen = max(maxLen, i + 1)
+
+        # Calculate the remaining sum needed to reach `k`
+            rem = Sum - k
+
+        # If the remaining sum exists, calculate the subarray length
+            if rem in preSumMap:
+                length = i - preSumMap[rem]
+                maxLen = max(maxLen, length)
+
+        # If the prefix sum is not in the map, store it
+            if Sum not in preSumMap:
+                preSumMap[Sum] = i
+
         return maxLen
-                
-            
-    
-
-
 
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
 
-
-for _ in range(0,int(input())):
-    
-    n, k = map(int , input().split())
-    arr = list(map(int,input().strip().split()))
-    ob = Solution()
-    print(ob.lenOfLongSubarr(arr, n, k))
-
-
-
-
+if __name__ == '__main__':
+    tc = int(input().strip())
+    while tc > 0:
+        arr = list(map(int, input().strip().split()))
+        k = int(input().strip())
+        ob = Solution()
+        print(ob.lenOfLongestSubarr(arr, k))
+        tc -= 1
+        print("~")
 # } Driver Code Ends
