@@ -1,57 +1,28 @@
 class Solution:
-    #Back-end complete function Template for Python 3
-    
-    #Function to find the leaders in the array.
-    def leaders(self,n, arr):
-        leaders_list = []
-        
-        # Start with the rightmost element as the first leader
-        max_from_right = arr[-1]
-        leaders_list.append(max_from_right)
-        
-        # Traverse the array from the second last element to the left
-        for i in range(n - 2, -1, -1):
-            if arr[i] >= max_from_right:
-                leaders_list.append(arr[i])
-                max_from_right = arr[i]
-        
-        # Since we collected leaders in reverse order, reverse the list before returning
-        leaders_list.reverse()
-        
-        return leaders_list
-
-
-
-
-
+    def leaders(self, arr):
+        leaders = []
+        great = arr[-1]
+        n = len(arr)
+        leaders.append(arr[-1])
+        for i in range(n-2,-1,-1):
+            if  arr[i] >= great:
+                leaders.append(arr[i])
+                great = arr[i]
+        return reversed(leaders)
+            
 #{ 
  # Driver Code Starts
-#Initial Template for Python 3
+t = int(input())  # number of test cases
+for _ in range(t):
+    arr = list(map(int, input().split()))  # input array
+    s = Solution().leaders(arr)  # find the leaders
 
-import math
+    # Output formatting
+    if s:
+        print(" ".join(map(str, s)))  # Print leaders in the required order
+    else:
+        print("[]")  # Print empty list if no leaders are found
 
-
-def main():
-
-    T = int(input())
-
-    while (T > 0):
-
-        N = int(input())
-
-        A = [int(x) for x in input().strip().split()]
-        obj = Solution()
-
-        A = obj.leaders(N, A)
-
-        for i in A:
-            print(i, end=" ")
-        print()
-
-        T -= 1
-
-
-if __name__ == "__main__":
-    main()
+    print("~")
 
 # } Driver Code Ends
