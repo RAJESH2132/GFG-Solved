@@ -1,19 +1,12 @@
-#User function Template for python3
 class Solution:
-	def twoSum(self, nums, target):
-		n = len(nums)
-        left = 0
-        right = n-1
-        nums.sort()
-        while left < right:
-            eleSum = nums[left] + nums[right]
-            if eleSum == target:
-                return True
-            if eleSum < target:
-                left += 1
-            else:
-                right -= 1
-        return False
+    def twoSum(self, arr, target):
+        seen = set()  
+        for num in arr:
+            complement = target - num
+            if complement in seen:
+                return True 
+            seen.add(num)
+        return False  
 
 
 #{ 
